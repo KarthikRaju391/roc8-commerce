@@ -5,6 +5,18 @@ import { SearchBox } from "./SearchBox";
 
 const Navbar = () => {
 	const { searchTerm ,setSearchTerm } = useContext(SearchContext);
+	
+    const [categories, setCategories] = useState<string[]>([]);
+
+	useEffect(() => {
+		async function getCategories() {
+			const res = await fetch("https://fakestoreapi.com/products/categories");
+			const data = await res.json();
+            setCategories(data);
+		}
+
+        getCategories();
+	}, []);
 
 	return (
 		<nav className="border rounded-lg border-gray-800 flex justify-between">
@@ -12,11 +24,12 @@ const Navbar = () => {
 				Roc8-Commerce
 			</Link>
 			<ul className="flex justify-end gap-3 mr-4">
-				<li className="nav-item">
-					<Link to={"/"} className="nav-link">
-						Products
+				{ categories.map((category) => (
+					<li className="nav-item">
+					<Link to={`/products/${category}`} className="nav-link">
+						{category}
 					</Link>
-				</li>
+				</li>))}
 				<li className="nav-item">
 					<Link to={"/cart"} className="nav-link">
 						Cart

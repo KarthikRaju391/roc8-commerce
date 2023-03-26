@@ -1,7 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import {Link} from 'react-router-dom'
+import { SearchContext } from "../context/SearchContext";
+import { SearchBox } from "./SearchBox";
 
 const Navbar = () => {
+	const { searchTerm ,setSearchTerm } = useContext(SearchContext);
+
 	return (
 		<nav className="border rounded-lg border-gray-800 flex justify-between">
 			<Link to={"/"} className="ml-2">
@@ -18,6 +22,7 @@ const Navbar = () => {
 						Cart
 					</Link>
 				</li>
+				<SearchBox searchTerm={searchTerm} setSearchTerm={setSearchTerm}/>
 			</ul>
 		</nav>
 	);

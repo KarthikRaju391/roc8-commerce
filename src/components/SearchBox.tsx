@@ -15,7 +15,7 @@ export const SearchBox: React.FC<SearchBoxProps> = ({
 
   return (
     <div>
-      <input type="text" value={searchTerm} onChange={handleSearchTermChange} />
+      <input className="p-3 border-2 rounded-md font-semibold" placeholder="Search Products" type="text" value={searchTerm} onChange={handleSearchTermChange} />
     </div>
   );
 };

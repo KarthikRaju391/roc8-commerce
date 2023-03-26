@@ -17,7 +17,7 @@ const Cart = () => {
 	if (cartItems.length === 0) {
 		return (
 			<div className="mt-4">
-				<Link to={"/"} className="text-xl font-bold mb-8 w-3/4 mx-auto">
+				<Link to={"/"} className="text-xl underline font-bold mb-8 w-3/4 mx-auto">
 					Nothing in cart, continue shopping
 				</Link>
 			</div>

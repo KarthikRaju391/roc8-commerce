@@ -19,23 +19,17 @@ const Navbar = () => {
 	}, []);
 
 	return (
-		<nav className="border rounded-lg border-gray-800 flex justify-between">
-			<Link to={"/"} className="ml-2">
+		<nav className="border rounded-lg p-4 border-gray-800 flex justify-between items-center">
+			<Link to={"/"} className="ml-2 text-4xl font-semibold">
 				Roc8-Commerce
 			</Link>
-			<ul className="flex justify-end gap-3 mr-4">
-				{ categories.map((category) => (
-					<li className="nav-item">
-					<Link to={`/products/${category}`} className="nav-link">
-						{category}
-					</Link>
-				</li>))}
-				<li className="nav-item">
-					<Link to={"/cart"} className="nav-link">
+			<ul className="flex justify-end items-center gap-3 mr-4">
+				<SearchBox searchTerm={searchTerm} setSearchTerm={setSearchTerm}/>
+				<li>
+					<Link to={"/cart"} className="text-xl bg-gray-800 hover:bg-gray-700 text-slate-200 px-6 py-3 rounded-md">
 						Cart
 					</Link>
 				</li>
-				<SearchBox searchTerm={searchTerm} setSearchTerm={setSearchTerm}/>
 			</ul>
 		</nav>
 	);

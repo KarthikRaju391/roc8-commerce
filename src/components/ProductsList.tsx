@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import { Link } from "react-router-dom";
 import { SearchContext } from "../context/SearchContext";
 import { Product } from "../utils/types";
 import ProductItem from "./ProductItem";
@@ -12,7 +13,7 @@ const ProductsList = ({ products }: { products: Product[] }) => {
 		<div>
 			<div className="grid md:grid-cols-3 lg:grid-cols-4 gap-2">
 				{searchTerm && filteredProducts.length === 0 && (
-					<h1>No products found</h1>
+					<h1 className="text-2xl text-left">No products found</h1>
 				)}
 				{searchTerm &&
 					filteredProducts.map((product) => (

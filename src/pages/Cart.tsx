@@ -11,7 +11,7 @@ const Cart = () => {
 		setOrdered((prev) => !prev);
 		setTimeout(() => {
 			clearCart();
-		}, 3000);
+		}, 1500);
 	};
 
 	if (cartItems.length === 0) {

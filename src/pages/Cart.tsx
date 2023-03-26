@@ -67,7 +67,7 @@ const Cart = () => {
 										</button>
 									</div>
 									<button
-										className="mt-8 bg-red-500 px-4 py-2 text-slate-100"
+										className="mt-8 bg-red-500 hover:bg-red-600 px-4 py-2 text-slate-100"
 										onClick={() => removeFromCart(item.product.id)}
 									>
 										Remove
@@ -85,7 +85,7 @@ const Cart = () => {
 			</div>
 			<button
 				onClick={handleOrder}
-				className="w-3/4 mx-auto bg-gray-800 py-4 text-xl text-slate-200"
+				className="w-3/4 mx-auto bg-gray-800 hover:bg-gray-700 py-4 text-xl text-slate-200"
 			>
 				{ordered ? "Order placed successfully!!" : "Place Order"}
 			</button>

@@ -30,15 +30,15 @@ const Cart = () => {
 				<div>
 					{cartItems.map((item) => (
 						<div key={item.product.id} className="border-t-2 py-8">
-							<div className="flex items-center mx-auto">
-								<div className="w-1/4">
+							<div className="flex flex-col md:flex-row items-center mx-auto">
+								<div className="md:w-1/4">
 									<img
 										className="object-cover"
 										src={item.product.image}
 										alt={item.product.title}
 									/>
 								</div>
-								<div className="w-1/2 mx-auto flex flex-col justify-center items-center">
+								<div className="md:w-1/2 mx-auto flex flex-col justify-center items-center">
 									<h1 className="text-2xl">{item.product.title}</h1>
 									<h2 className="text-xl font-bold">
 										${item.product.price * item.quantity}

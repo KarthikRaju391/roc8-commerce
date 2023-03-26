@@ -36,15 +36,15 @@ const Product = () => {
 	return (
 		<div>
 			{product && (
-				<div className="grid grid-cols-2">
-					<div className="w-2/3 mx-auto py-20">
+				<div className="grid md:grid-cols-2">
+					<div className="md:w-2/3 mx-auto py-20">
 						<img
 							className="object-cover"
 							src={product.image}
 							alt={product.title}
 						/>
 					</div>
-					<div className="w-3/4 mx-auto py-20">
+					<div className="md:w-3/4 mx-auto md:py-20">
 						<h1 className="text-2xl text-left">{product.title}</h1>
 						<p className="font-light text-left">{product.category}</p>
 						<p className="font-medium text-left mt-2">{product.description}</p>

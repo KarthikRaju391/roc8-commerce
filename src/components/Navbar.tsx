@@ -19,14 +19,14 @@ const Navbar = () => {
 	}, []);
 
 	return (
-		<nav className="border rounded-lg p-4 border-gray-800 flex justify-between items-center">
-			<Link to={"/"} className="ml-2 text-4xl font-semibold">
+		<nav className="border rounded-lg p-4 border-gray-800 flex flex-col md:flex-row justify-between items-center">
+			<Link to={"/"} className="md:ml-2 text-3xl md:text-4xl font-semibold">
 				Roc8-Commerce
 			</Link>
-			<ul className="flex justify-end items-center gap-3 mr-4">
+			<ul className="flex justify-end items-center mt-4 md:mt-0 gap-3 md:mr-4">
 				<SearchBox searchTerm={searchTerm} setSearchTerm={setSearchTerm}/>
 				<li>
-					<Link to={"/cart"} className="text-xl bg-gray-800 hover:bg-gray-700 text-slate-200 px-6 py-3 rounded-md">
+					<Link to={"/cart"} className="md:text-xl bg-gray-800 hover:bg-gray-700 text-slate-200 px-3 md:px-6 py-3 rounded-md">
 						Cart
 					</Link>
 				</li>

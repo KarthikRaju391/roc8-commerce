@@ -1,30 +1,22 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
-import {
-	SignedIn,
-	SignedOut,
-	UserButton,
-	ClerkProvider,
-} from "@clerk/clerk-react";
 import "./App.css";
+import Navbar from "./components/Navbar";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Products from "./pages/Products";
+import Product from "./pages/Product";
 
 function App() {
 	return (
-		<ClerkProvider
-			publishableKey={import.meta.env.VITE_APP_CLERK_PUBLISHABLE_KEY}
-		>
-			<div className="App">
-				<h1 className="text-3xl font-bold underline">Hello world</h1>
-				<UserButton />
-				<SignedIn>
-					<h1>You are signed in as user</h1>
-				</SignedIn>
-				<SignedOut>
-					<h1>You are signed out, please sign in</h1>
-				</SignedOut>
-			</div>
-		</ClerkProvider>
+		<div className="App">
+			<Router>
+				<Navbar />
+				<Routes>
+					<Route path="/" element={<Products />} />
+					<Route path="/products/:id" element={<Product />} />
+					<Route path="/cart" element={<h1>Cart</h1>} />
+					<Route path="/signin" element={<h1>Sign In</h1>} />
+				</Routes>
+			</Router>
+		</div>
 	);
 }
 
